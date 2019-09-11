@@ -5,6 +5,7 @@ using UnityEngine;
 public class Multiply : MonoBehaviour
 {
     int myInt = 5;
+    int theInt = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -12,14 +13,22 @@ public class Multiply : MonoBehaviour
         myInt =
         MultiplyByTwo(myInt);
         Debug.Log (myInt);
-        
+    
     }
 
     int MultiplyByTwo (int number)
+    
+    
     {
         int ret;
         ret = number * 2;
         return ret;
+
+        
+
+
+
+
     }
 
     // Update is called once per frame
