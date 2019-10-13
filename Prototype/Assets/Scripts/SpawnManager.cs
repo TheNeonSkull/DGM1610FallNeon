@@ -16,22 +16,13 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            SpawnRandomAnimal();
-            //Random Gen animal index and spawn pos
-        } 
-    }
-            void SpawnRandomAnimal(){ 
-                
-                int animalIndex = Random.Range(0, animalPrefabs.Length);
-                Vector3 spawnpos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX),0, spawnPosZ);
-
-                Instantiate(animalPrefabs[animalIndex], spawnpos, 
-                animalPrefabs[animalIndex].transform.rotation);
-           
+        if (Input.GetKeyDown(KeyCode.S)){
+            Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
+            int animalIndex = Random.Range(0, animalPrefabs.Length);
+            Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation);}}
+       
             }
-    }
+    
 
         
     
