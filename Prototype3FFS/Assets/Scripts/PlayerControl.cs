@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
     public float horizontalInput;
     public float speed = 10.0f;
     public float verticalInput;
+    public GameObject projectilePrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +19,10 @@ public class PlayerControl : MonoBehaviour
     {
         //Horizontal and Vertical Movement
         horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+        transform.Translate(Vector3.left * horizontalInput * Time.deltaTime * speed);
 
         verticalInput = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.up * verticalInput * Time.deltaTime * speed);
+        transform.Translate(Vector3.down * verticalInput * Time.deltaTime * speed);
 
 
 //LeftSide Barrier
@@ -31,6 +32,10 @@ public class PlayerControl : MonoBehaviour
         //RightSide Barrier
         if (transform.position.x > 21){
             transform.position = new Vector3(21, transform.position.y, transform.position.z);}
+
+            if (Input.GetKeyDown(KeyCode.Space)){
+                Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            }
 
            
 
