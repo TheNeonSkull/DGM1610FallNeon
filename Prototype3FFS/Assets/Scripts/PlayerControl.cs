@@ -8,6 +8,8 @@ public class PlayerControl : MonoBehaviour
     public float speed = 10.0f;
     public float verticalInput;
     public GameObject projectilePrefab;
+    public bool gameOver = false;
+    public bool isplayer = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,8 +39,19 @@ public class PlayerControl : MonoBehaviour
                 Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
             }
 
+          }
+          private void OnCollisionEnter2D(Collision2D collision)
+          {
+              if (collision.gameObject.CompareTag("Player")){
+                  isplayer=true;
+              } else if (collision.gameObject.CompareTag("Enemy")){
+                  gameOver = true;
+                  Debug.Log("You are Dead");
+              }
+          }
+
            
 
 
     }
-}
+
