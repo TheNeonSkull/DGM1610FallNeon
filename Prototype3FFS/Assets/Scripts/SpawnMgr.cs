@@ -7,8 +7,8 @@ public class SpawnMgr : MonoBehaviour
     public GameObject[] enemyPrefabs; 
     private float spawnRangeX = 10;
     private float spawnPosZ = 0;
-    private float startDelay = 2;
-    private float repeatRate = 1;
+    private float startDelay = 1;
+    public float repeatRate = 1;
     // Start is called before the first frame update
     void Start()
     {

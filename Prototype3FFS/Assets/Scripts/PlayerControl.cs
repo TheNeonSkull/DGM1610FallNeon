@@ -28,26 +28,19 @@ public class PlayerControl : MonoBehaviour
 
 
 //LeftSide Barrier
-        if (transform.position.x < -17){
-            transform.position = new Vector3(-17, transform.position.y, transform.position.z);
+        if (transform.position.x < -13){
+            transform.position = new Vector3(-13, transform.position.y, transform.position.z);
         }
         //RightSide Barrier
-        if (transform.position.x > 21){
-            transform.position = new Vector3(21, transform.position.y, transform.position.z);}
-
+        if (transform.position.x > 17){
+            transform.position = new Vector3(17, transform.position.y, transform.position.z);}
+//Spacebar shooting
             if (Input.GetKeyDown(KeyCode.Space)){
                 Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
             }
 
-          }
-          private void OnCollisionEnter2D(Collision2D collision)
-          {
-              if (collision.gameObject.CompareTag("Player")){
-                  isplayer=true;
-              } else if (collision.gameObject.CompareTag("Enemy")){
-                  gameOver = true;
-                  Debug.Log("You are Dead");
-              }
+        
+          
           }
 
            

@@ -18,6 +18,7 @@ public class Collisions : MonoBehaviour
        
     }
      void OnTriggerEnter2D(Collider2D other){
+         
          Destroy(gameObject);
          //Destroy(other.gameObject);
 
