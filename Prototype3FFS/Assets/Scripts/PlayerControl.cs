@@ -10,10 +10,13 @@ public class PlayerControl : MonoBehaviour
     public GameObject projectilePrefab;
     public bool gameOver = false;
     public bool isplayer = true;
+    public AudioClip shoot;
+    private AudioSource playerAudio;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,6 +40,7 @@ public class PlayerControl : MonoBehaviour
 //Spacebar shooting
             if (Input.GetKeyDown(KeyCode.Space)){
                 Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+                playerAudio.PlayOneShot(shoot,1.0f);
             }
 
         
